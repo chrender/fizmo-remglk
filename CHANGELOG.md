@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.1.2 — November 6, 2016**
+
+ - Extended configuration to locate remglk.
+
+---
+
+
    **Version 0.1.1 — August 31, 2016**
 
  - Use tiny-xml-doc-tools for documentation.
