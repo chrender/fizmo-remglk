@@ -4553,7 +4553,7 @@ ac_fn_c_check_header_mongrel "$LINENO" "remglk.h" "ac_cv_header_remglk_h" "$ac_i
 if test "x$ac_cv_header_remglk_h" = xyes; then :
 
 else
-  for dir in $with_remglk_includedir /usr/include /usr/local/include ; do
+  for dir in $with_remglk_includedir /usr/include /usr/local/include /usr/include/remglk ; do
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $dir/remglk.h" >&5
 $as_echo_n "checking for $dir/remglk.h... " >&6; }
      if  test -e $dir/remglk.h ; then
