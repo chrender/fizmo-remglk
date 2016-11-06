@@ -37,7 +37,7 @@ AC_ARG_ENABLE([tracing],
 
 AC_INIT(
  [fizmo-remglk],
- [0.1.1],
+ [0.1.2],
  fizmo@spellbreaker.org,
  fizmo-remglk)
 
