@@ -1,0 +1,28 @@
+Source: fizmo-remglk
+Section: games
+Priority: extra
+Maintainer: Christoph Ender <christoph.ender@spellbreaker.org>
+Build-Depends: debhelper (>= 9.0.0),
+ dpkg-dev (>= 1.16.1~),
+ dh-autoreconf,
+ automake,
+ autoconf,
+ pkg-config,
+ libfizmo-dev,
+ libglkif-dev
+Standards-Version: 3.9.8
+Homepage: https://fizmo.spellbreaker.org/
+
+Package: fizmo-remglk
+Architecture: any
+Depends: libfizmo-common,
+ libglkif-common,
+ ${misc:Depends},
+ ${shlibs:Depends}
+Provides: fizmo,
+ zcode-interpreter
+Description: RemGlk-based Z-machine interpreter for Infocom/Inform games
+ This is a RemGlk frontend for the fizmo Z-Machine interpreter. RemGlk
+ provides a JSON-based interface instead of a user GUI, which can be
+ used to directly interact with the Z-Machine based on Glk events. It is
+ mainly used for automated testing.
