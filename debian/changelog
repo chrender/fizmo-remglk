@@ -1,4 +1,4 @@
-fizmo-remglk (0.1.1-1) experimental; urgency=low
+fizmo-remglk (0.1.2-1) experimental; urgency=low
 
   * Initial stand-alone packaging for fizmo-remglk (Closes: #843468).
 
