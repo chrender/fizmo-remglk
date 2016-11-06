@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.1.2">
+    <datetime day-of-week="Sun" month="11" day="6" hour="22"
+      minute="34" second="55" timezone="CET" year="2016"/>
+    <logentry>Extended configuration to locate remglk.</logentry>
+  </change>
+
   <change version="0.1.1">
     <datetime day-of-week="Wed" month="8" day="31" hour="22"
       minute="10" second="12" timezone="CEST" year="2016"/>

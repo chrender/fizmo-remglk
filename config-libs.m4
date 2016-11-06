@@ -4,7 +4,7 @@ remglk_nonpkg_libs=""
 
 AC_CHECK_HEADER([remglk.h],
   [],
-  [for dir in $with_remglk_includedir /usr/include /usr/local/include ; do
+  [for dir in $with_remglk_includedir /usr/include /usr/local/include /usr/include/remglk ; do
      AC_MSG_CHECKING(for $dir/remglk.h)
      if [ test -e $dir/remglk.h ]; then
        AC_MSG_RESULT(yes)
