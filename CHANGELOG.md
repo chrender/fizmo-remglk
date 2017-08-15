@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.1.3 — August 15, 2017**
+
+ - Adapted to LICENSE file.
+
+---
+
+
    **Version 0.1.2 — November 6, 2016**
 
  - Extended configuration to locate remglk.
