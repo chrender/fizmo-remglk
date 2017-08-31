@@ -2,11 +2,11 @@
 remglk_nonpkg_cflags=""
 remglk_nonpkg_libs=""
 
-AC_CHECK_HEADER([remglk.h],
+AC_CHECK_HEADER([glk.h],
   [],
-  [for dir in $with_remglk_includedir /usr/include /usr/local/include /usr/include/remglk ; do
-     AC_MSG_CHECKING(for $dir/remglk.h)
-     if [ test -e $dir/remglk.h ]; then
+  [for dir in $with_glk_includedir /usr/include /usr/local/include /usr/include/remglk /usr/local/include/remglk ; do
+     AC_MSG_CHECKING(for glk.h in $dir)
+     if [ test -e $dir/glk.h ]; then
        AC_MSG_RESULT(yes)
        remglk_h_dir=$dir
        break
@@ -15,7 +15,7 @@ AC_CHECK_HEADER([remglk.h],
      fi
    done
    if [ test "x$remglk_h_dir" == "x"] ; then
-     echo "Could not find remglk.h."
+     echo "Could not find glk.h."
      echo "Try setting the location using --with-remglk-includedir."
      AS_EXIT
    fi
@@ -33,8 +33,8 @@ AC_CHECK_LIB([remglk],
        [AC_LANG_SOURCE(
         [[
           #include <stdio.h>
-          #include "$glk_h_dir/glk.h"
-          #include "$glk_h_dir/glkstart.h"
+          #include "$remglk_h_dir/glk.h"
+          #include "$remglk_h_dir/glkstart.h"
           glkunix_argumentlist_t glkunix_arguments[] = { };
           int glkunix_startup_code(glkunix_startup_t *data) { }
           void glk_main(void) { glk_exit(); } ]])],
