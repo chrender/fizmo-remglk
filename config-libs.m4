@@ -19,25 +19,22 @@ AC_CHECK_HEADER([glk.h],
      echo "Try setting the location using --with-remglk-includedir."
      AS_EXIT
    fi
-   remglk_nonpkg_cflags+=" -I$remglk_h_dir"])
+   remglk_nonpkg_cflags+=" -I$remglk_h_dir"
 
-AC_CHECK_LIB([remglk],
-  [main],
-  [],
-  [LIBS_OLD=$LIBS
+   CFLAGS_SAVED=$CFLAGS
+   LIBS_SAVED=$LIBS
+   LDFLAGS_SAVED=$LDFLAGS
    LIBS="-lremglk"
    for dir in $with_remglk_libdir /usr/lib /usr/local/lib ; do
      AC_MSG_CHECKING(for libremglk in $dir)
      LDFLAGS="-L$dir"
-     AC_LINK_IFELSE(
-       [AC_LANG_SOURCE(
-        [[
-          #include <stdio.h>
-          #include "$remglk_h_dir/glk.h"
-          #include "$remglk_h_dir/glkstart.h"
-          glkunix_argumentlist_t glkunix_arguments[] = { };
-          int glkunix_startup_code(glkunix_startup_t *data) { }
-          void glk_main(void) { glk_exit(); } ]])],
+     AC_TRY_LINK(
+       [#include <stdio.h>
+        #include "$remglk_h_dir/glk.h"
+        #include "$remglk_h_dir/glkstart.h"],
+       [glkunix_argumentlist_t glkunix_arguments[] = { };
+        int glkunix_startup_code(glkunix_startup_t *data) { }
+        void glk_main(void) { glk_exit(); } ],
        [AC_MSG_RESULT(yes)
         remglk_l_dir=$dir
         break],
@@ -46,11 +43,11 @@ AC_CHECK_LIB([remglk],
    if [ test "x$remglk_l_dir" == "x"] ; then
      echo "Could not find libremglk."
      echo "Try setting the location using --with-remglk-libdir."
-     AC_MSG_ERROR([Could not find libremglk.])
-     AC_MSG_ERROR([You need to specify libremglk.a location using "--with-remglk-libdir=<path>".])
-     AS_EXIT
+     exit
    fi
-   LIBS=$LIBS_OLD
-   remglk_nonpkg_libs+=" -L$remglk_l_dir -lremglk"
-])
+   LIBS=$LIBS_SAVED
+   LDFLAGS=$LDFLAGS_SAVED
+   CFLAGS=$CFLAGS_SAVED
+   remglk_nonpkg_libs="-L$remglk_h_dir -lremglk"
+   libremglk_LIBS="-L$remglk_l_dir -lremglk"])
 
