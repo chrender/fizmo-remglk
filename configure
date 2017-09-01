@@ -4584,49 +4584,10 @@ $as_echo "no" >&6; }
      as_fn_exit $?
    fi
    remglk_nonpkg_cflags+=" -I$remglk_h_dir"
-fi
 
-
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lremglk" >&5
-$as_echo_n "checking for main in -lremglk... " >&6; }
-if ${ac_cv_lib_remglk_main+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_check_lib_save_LIBS=$LIBS
-LIBS="-lremglk  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-
-int
-main ()
-{
-return main ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"; then :
-  ac_cv_lib_remglk_main=yes
-else
-  ac_cv_lib_remglk_main=no
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_remglk_main" >&5
-$as_echo "$ac_cv_lib_remglk_main" >&6; }
-if test "x$ac_cv_lib_remglk_main" = xyes; then :
-  cat >>confdefs.h <<_ACEOF
-#define HAVE_LIBREMGLK 1
-_ACEOF
-
-  LIBS="-lremglk $LIBS"
-
-else
-  LIBS_OLD=$LIBS
+   CFLAGS_SAVED=$CFLAGS
+   LIBS_SAVED=$LIBS
+   LDFLAGS_SAVED=$LDFLAGS
    LIBS="-lremglk"
    for dir in $with_remglk_libdir /usr/lib /usr/local/lib ; do
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libremglk in $dir" >&5
@@ -4634,13 +4595,18 @@ $as_echo_n "checking for libremglk in $dir... " >&6; }
      LDFLAGS="-L$dir"
      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-
-          #include <stdio.h>
-          #include "$remglk_h_dir/glk.h"
-          #include "$remglk_h_dir/glkstart.h"
-          glkunix_argumentlist_t glkunix_arguments[] = { };
-          int glkunix_startup_code(glkunix_startup_t *data) { }
-          void glk_main(void) { glk_exit(); }
+#include <stdio.h>
+        #include "$remglk_h_dir/glk.h"
+        #include "$remglk_h_dir/glkstart.h"
+int
+main ()
+{
+glkunix_argumentlist_t glkunix_arguments[] = { };
+        int glkunix_startup_code(glkunix_startup_t *data) { }
+        void glk_main(void) { glk_exit(); }
+  ;
+  return 0;
+}
 _ACEOF
 if ac_fn_c_try_link "$LINENO"; then :
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
@@ -4657,14 +4623,15 @@ rm -f core conftest.err conftest.$ac_objext \
    if  test "x$remglk_l_dir" == "x" ; then
      echo "Could not find libremglk."
      echo "Try setting the location using --with-remglk-libdir."
-     as_fn_error $? "Could not find libremglk." "$LINENO" 5
-     as_fn_error $? "You need to specify libremglk.a location using \"--with-remglk-libdir=<path>\"." "$LINENO" 5
-     as_fn_exit $?
+     exit
    fi
-   LIBS=$LIBS_OLD
-   remglk_nonpkg_libs+=" -L$remglk_l_dir -lremglk"
-
+   LIBS=$LIBS_SAVED
+   LDFLAGS=$LDFLAGS_SAVED
+   CFLAGS=$CFLAGS_SAVED
+   remglk_nonpkg_libs="-L$remglk_h_dir -lremglk"
+   libremglk_LIBS="-L$remglk_l_dir -lremglk"
 fi
+
 
 
 
