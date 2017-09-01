@@ -5,7 +5,7 @@ set -e
 if [ "$1" = "configure" ]; then
   update-alternatives \
     --install /usr/games/zcode-interpreter zcode-interpreter \
-     /usr/games/fizmo-remglk-launcher 50
+     /usr/games/fizmo-remglk-launcher 10
 fi
 
 #DEBHELPER#
