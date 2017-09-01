@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9.0.0),
  libfizmo-dev,
  libglkif-dev,
  remglk-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.0.0
 Homepage: https://fizmo.spellbreaker.org/
 
 Package: fizmo-remglk
