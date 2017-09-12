@@ -1,2 +1,3 @@
 debian/fizmo-remglk-launcher /usr/games
 debian/fizmo-remglk-launcher.6 /usr/share/man/man6
+debian/fizmo-remglk.6 /usr/share/man/man6
