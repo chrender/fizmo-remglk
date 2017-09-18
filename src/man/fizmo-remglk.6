@@ -1,0 +1,38 @@
+.TH FIZMO-REMGLK 6 "September 17, 2017" "0.1.4"
+.SH NAME
+fizmo-remglk
+- RemGlk-frontend for the fizmo Z-Machine Interpreter.
+
+.SH SYNOPSIS
+.B fizmo-remglk
+[ glk-options ]
+.I storyfile
+
+.SH DESCRIPTION
+.B fizmo-remglk
+is a RemGlk-frontend for the fizmo Z-Machine interpreter\[em]\[lq]\fBF\fPimzo
+\fBi\fPnterprets \fBZ\fP-\fBm\fPachine \fBo\fPpcodes\[rq]. Thus, it
+provides no user interface of its own, but instead acts as a JSON-wrapper
+for the GLK input and output. It is designed to be used for testing
+purposes, but can be used for bots or web services.
+
+.SH OPTIONS
+All options are directly passed to the GLK layer. The only requirement is
+to have the filename of the Z-Machine file to run.
+
+.SH SEE ALSO
+.BR fizmo-sdl2(6),
+.BR fizmo-ncursesw(6),
+.BR fizmo-console(6),
+.BR frotz(6),
+.BR xzip(6),
+.BR jzip(6),
+.BR inform(1)
+
+.SH AUTHOR
+The fizmo-remglk frontend was written in 2016\[en]2017 by Christoph Ender.
+
+.SH BUGS
+This frontend is in beta stage and will probably still contain some bugs.
+Any feedback to fizmo@spellbreaker.org is greatly appreciated.
+

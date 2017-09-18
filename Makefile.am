@@ -43,4 +43,5 @@ localedir = $(datarootdir)/fizmo/locales
 # PKGFILE = $(PKG_DIR)/libfizmo.pc
 
 SUBDIRS = src/fizmo-remglk
+man6_MANS = src/man/fizmo-remglk.6
 
