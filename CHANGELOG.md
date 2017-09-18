@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.1.4**
+
+ - Added manpage for fizmo-remglk.
+
+---
+
+
    **Version 0.1.3 — September 3, 2017**
 
  - Renamed copyright files to “license” for github license detection compatibility, see [Github's “Licensing a repository”](https://help.github.com/articles/licensing-a-repository/) for further reference.

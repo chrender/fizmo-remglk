@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.1.4">
+    <logentry>Added manpage for fizmo-remglk.</logentry>
+  </change>
+
   <change version="0.1.3">
     <datetime day-of-week="Sun" month="9" day="3" hour="21"
       minute="57" second="3" timezone="CEST" year="2017"/>
