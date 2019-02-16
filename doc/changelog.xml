@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.1.4">
+    <datetime day-of-week="Sat" month="2" day="16" hour="23"
+      minute="9" second="2" timezone="CET" year="2019"/>
     <logentry>Added manpage for fizmo-remglk.</logentry>
+    <logentry>Fixed autoconf detection for libremglk.</logentry>
+    <logentry>Updated tiny-xml-doc-tools to version 0.1.5.</logentry>
   </change>
 
   <change version="0.1.3">

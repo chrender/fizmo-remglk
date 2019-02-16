@@ -28,13 +28,14 @@ AC_CHECK_HEADER([glk.h],
    for dir in $with_remglk_libdir /usr/lib /usr/local/lib ; do
      AC_MSG_CHECKING(for libremglk in $dir)
      LDFLAGS="-L$dir"
-     AC_TRY_LINK(
-       [#include <stdio.h>
-        #include "$remglk_h_dir/glk.h"
-        #include "$remglk_h_dir/glkstart.h"],
-       [glkunix_argumentlist_t glkunix_arguments[] = { };
-        int glkunix_startup_code(glkunix_startup_t *data) { }
-        void glk_main(void) { glk_exit(); } ],
+      AC_LINK_IFELSE(
+       [AC_LANG_SOURCE([
+        [#include <stdio.h>
+         #include "$remglk_h_dir/glk.h"
+         #include "$remglk_h_dir/glkstart.h"
+         glkunix_argumentlist_t glkunix_arguments[] = { };
+         int glkunix_startup_code(glkunix_startup_t *data) { return 0; }
+         void glk_main(void) { glk_exit(); } ]])],
        [AC_MSG_RESULT(yes)
         remglk_l_dir=$dir
         break],
