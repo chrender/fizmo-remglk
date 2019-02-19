@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.1.4">
-    <datetime day-of-week="Sat" month="2" day="16" hour="23"
-      minute="9" second="2" timezone="CET" year="2019"/>
+    <datetime day-of-week="Tue" month="2" day="19" hour="22"
+      minute="33" second="0" timezone="CET" year="2019"/>
     <logentry>Added manpage for fizmo-remglk.</logentry>
     <logentry>Fixed autoconf detection for libremglk.</logentry>
+    <logentry>Fixed potential compile errors due to relative paths in autoconf parameters.</logentry>
     <logentry>Updated tiny-xml-doc-tools to version 0.1.5.</logentry>
   </change>
 

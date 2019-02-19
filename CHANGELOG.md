@@ -1,10 +1,11 @@
 
 
 
-   **Version 0.1.4 — Febuary 16, 2019**
+   **Version 0.1.4 — Febuary 19, 2019**
 
  - Added manpage for fizmo-remglk.
  - Fixed autoconf detection for libremglk.
+ - Fixed potential compile errors due to relative paths in autoconf parameters.
  - Updated tiny-xml-doc-tools to version 0.1.5.
 
 ---
